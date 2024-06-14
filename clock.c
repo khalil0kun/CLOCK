@@ -11,7 +11,7 @@ int main(){
     }
     switch (choice){
     case 1:
-        int h,m,s,a=1;
+        int h,m,s;
         printf("\nWhat Time Is it ? (hours)  ");
         scanf("%d",&h);
         while (h<0 || h>24){
@@ -34,24 +34,8 @@ int main(){
             scanf("%d",&s);
         }
         printf("\n\n\n\n");
-        while (a!=0){
-            if (h<10 && m<10 && s<10){
-                printf("\rTime ==> 0%d:0%d:0%d",h,m,s);
-            } else if(h<10 && m<10){
-                printf("\rTime ==> 0%d:0%d:%d",h,m,s);
-            } else if(h<10 && s<10){
-                printf("\rTime ==> 0%d:%d:0%d",h,m,s);
-            } else if(m<10 && s<10){
-                printf("\rTime ==> %d:0%d:0%d",h,m,s);
-            } else if(h<10){
-                printf("\rTime ==> 0%d:%d:%d",h,m,s);
-            } else if(m<10){
-                printf("\rTime ==> %d:0%d:%d",h,m,s);
-            } else if(s<10){
-                printf("\rTime ==> %d:%d:0%d",h,m,s);
-            } else{
-                printf("\rTime ==> %d:%d:%d",h,m,s);
-            }
+        while (1){
+            printf("\rTime ==> %02d:%02d:%02d",h,m,s);
             Sleep(1000);
             s+=1;
             if (s==60){
@@ -95,44 +79,12 @@ int main(){
             scanf("%d",&c);
         }
         printf("\n\n\n\n");
-        while (a!=0){
+        while (1){
             if (c==1){
-                if (h<10 && m<10 && s<10){
-                    printf("\rTime ==> 0%d:0%d:0%d AM",h,m,s);
-                } else if(h<10 && m<10){
-                    printf("\rTime ==> 0%d:0%d:%d AM",h,m,s);
-                } else if(h<10 && s<10){
-                    printf("\rTime ==> 0%d:%d:0%d AM",h,m,s);
-                } else if(m<10 && s<10){
-                    printf("\rTime ==> %d:0%d:0%d AM",h,m,s);
-                } else if(h<10){
-                    printf("\rTime ==> 0%d:%d:%d AM",h,m,s);
-                } else if(m<10){
-                    printf("\rTime ==> %d:0%d:%d AM",h,m,s);
-                } else if(s<10){
-                    printf("\rTime ==> %d:%d:0%d AM",h,m,s);
-                } else{
-                    printf("\rTime ==> %d:%d:%d AM",h,m,s);
-                }
+                printf("\rTime ==> %02d:%02d:%02d AM",h,m,s);
             } else if (c==0)
             {
-                if (h<10 && m<10 && s<10){
-                    printf("\rTime ==> 0%d:0%d:0%d PM",h,m,s);
-                } else if(h<10 && m<10){
-                    printf("\rTime ==> 0%d:0%d:%d PM",h,m,s);
-                } else if(h<10 && s<10){
-                    printf("\rTime ==> 0%d:%d:0%d PM",h,m,s);
-                } else if(m<10 && s<10){
-                    printf("\rTime ==> %d:0%d:0%d PM",h,m,s);
-                } else if(h<10){
-                    printf("\rTime ==> 0%d:%d:%d PM",h,m,s);
-                } else if(m<10){
-                    printf("\rTime ==> %d:0%d:%d PM",h,m,s);
-                } else if(s<10){
-                    printf("\rTime ==> %d:%d:0%d PM",h,m,s);
-                } else{
-                    printf("\rTime ==> %d:%d:%d PM",h,m,s);
-                }
+                printf("\rTime ==> %02d:%02d:%02d PM",h,m,s);
             }
             Sleep(1000);
             s+=1;
